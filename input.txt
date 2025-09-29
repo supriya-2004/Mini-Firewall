@@ -1,0 +1,31 @@
+# input.txt
+# This file tests the robust parser for the firewall script.
+# The script will correctly parse all valid lines and skip invalid ones.
+
+# Valid data with standard comma delimiter
+3,1
+10,1
+
+# Test for T7: Lines separated by tabs and spaces (no comma)
+2	3
+4 3
+
+# Test for adversarial spacing
+ 1,   5
+ 9 ,5
+
+# More valid data
+5,7
+6,10
+
+# Invalid data that should be skipped with a warning
+16,11
+17,0
+this is not a packet
+
+# Another valid packet to complete the first batch of 10
+11,2
+12,8
+
+# This packet will start the second batch
+13,1
