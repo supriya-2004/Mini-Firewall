@@ -105,5 +105,25 @@ Warning: Skipping line #16 due to invalid priority (11). Must be 1-10.
 Warning: Skipping malformed line #17: 'this is not a packet'
 ```
 
+---
+
+## How it is relating to concept of mini firewall?
+This python script simulates a core function of modern firewalls known as *Quality of Service (QoS)* or *traffic shaping*. While a real firewall's main job is security (blocking/allowing traffic), _it also needs to manage the flow of allowed traffic efficiently_.
+
+Here's the direct analogy:
+
+- *Packets*: In our script, the lines in input.txt represent real network data packets arriving at the firewall.
+
+- *Priority*: This number (1-10) simulates the importance of the packet's data. For example, a packet for a video call (Priority 1) is more time-sensitive than a packet for a background file download (Priority 10).
+
+- *The Sorting Logic*: This is the "firewall's" brain for QoS. When multiple packets arrive at once, the firewall uses this logic to decide which one to process first. Python script ensures the most critical data gets handled immediately, preventing lag or disruption for important applications.
+
+**Essentially, our script is a "mini-firewall" because it models just this one specific, crucial task of prioritizing and ordering traffic from a processing queue.**
+
+---
+
+## Conclusion
+This project delivered a functional Python script that simulates a mini firewall by sorting packets based on priority and serial number. The final tool is robust, gracefully handling diverse input formats and invalid data. It stands as a complete, well-documented command-line solution that successfully fulfills all requirements.
+
 
 
